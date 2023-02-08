@@ -26,6 +26,7 @@ func NewHandler() *S {
 	return &S{}
 }
 
+// comment just for testing shit
 func (s *S) Handshake(_ context.Context, req *tester.HandshakeReq) (*tester.HandshakeResp, error) {
 	fmt.Printf("Incoming request, message - %s\n", req.GetHelloOut())
 	resp := &tester.HandshakeResp{
