@@ -3,7 +3,7 @@ module github.com/Xameleonnn/grpcServer
 go 1.19
 
 require (
-	github.com/Xameleonnn/grpctester v0.0.0-20230207144639-af8379eb1b90
+	github.com/Xameleonnn/grpctester v0.0.0-20230208141706-a75bebc5c273
 	google.golang.org/grpc v1.53.0
 )
 
