@@ -1,4 +1,4 @@
-module grpcServer
+module github.com/Xameleonnn/grpcServer
 
 go 1.19
 
