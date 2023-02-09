@@ -4,6 +4,6 @@ ADD . /go/src/github.com/Xameleonnn/grpcServer
 
 RUN go install github.com/Xameleonnn/grpcServer@master
 
-ENTRYPOINT ["/go/bin/server"]
+ENTRYPOINT ["/go/bin/grpcServer"]
 
 EXPOSE 5300

@@ -2,15 +2,12 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	tester "github.com/Xameleonnn/grpctester"
 	"google.golang.org/grpc"
 	"log"
 	"net"
-)
-
-const (
-	host = "localhost:5300"
 )
 
 type S struct {
@@ -40,6 +37,7 @@ func newServer(addr string) (server *Server, err error) {
 	if err != nil {
 		return nil, err
 	}
+	fmt.Printf("listening on %s\n", addr)
 
 	grpcServer := grpc.NewServer()
 	h := NewHandler()
@@ -55,7 +53,9 @@ func (srv *Server) Start() error {
 }
 
 func main() {
-	s, err := newServer(host)
+	var addr = flag.String("serveraddr", ":5300", "where to bang to")
+	flag.Parse()
+	s, err := newServer(*addr)
 	if err != nil {
 		log.Fatalf("Couldnt make new grpc server, error - %v\n", err)
 	}
